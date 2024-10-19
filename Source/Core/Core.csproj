@@ -30,8 +30,4 @@
         <PackageReference Include="prometheus-net.AspNetCore.HealthChecks"/>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Web\" />
-    </ItemGroup>
-
 </Project>
