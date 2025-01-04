@@ -2,7 +2,7 @@ using Projects;
 
 namespace Startup;
 
-public static class Program
+public class AspireStartup
 {
     public static void Main(string[] args)
     {

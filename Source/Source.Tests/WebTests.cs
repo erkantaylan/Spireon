@@ -1,4 +1,6 @@
 using System.Net;
+using Aspire.Hosting;
+using Startup;
 
 namespace Source.Tests;
 
@@ -8,7 +10,7 @@ public class WebTests
     public async Task GetWebResourceRootReturnsOkStatusCode()
     {
         // Arrange
-        IDistributedApplicationTestingBuilder appHost = await DistributedApplicationTestingBuilder.CreateAsync<Projects.Startup>();
+        IDistributedApplicationTestingBuilder appHost = await DistributedApplicationTestingBuilder.CreateAsync<AspireStartup>();
         await using DistributedApplication app = await appHost.BuildAsync();
         await app.StartAsync();
 
