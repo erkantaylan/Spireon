@@ -2,27 +2,27 @@ using Microsoft.AspNetCore.Builder;
 
 namespace Core.Framework;
 
-public class MicroApp(string[] args)
+public class SpireonApp(string[] args)
 {
     private readonly List<Action<WebApplication>> appActions = [];
     private readonly List<Action<WebApplicationBuilder>> webActions = [];
     private readonly WebApplicationBuilder webApplicationBuilder = WebApplication.CreateBuilder(args);
 
-    public MicroApp RegisterBuilder(Action<WebApplicationBuilder> webAction)
+    public SpireonApp RegisterBuilder(Action<WebApplicationBuilder> webAction)
     {
         webActions.Add(webAction);
 
         return this;
     }
 
-    public MicroApp RegisterApp(Action<WebApplication> appAction)
+    public SpireonApp RegisterApp(Action<WebApplication> appAction)
     {
         appActions.Add(appAction);
 
         return this;
     }
 
-    public MicroApp Register(Action<WebApplicationBuilder> builder, Action<WebApplication> app)
+    public SpireonApp Register(Action<WebApplicationBuilder> builder, Action<WebApplication> app)
     {
         RegisterBuilder(builder);
         RegisterApp(app);

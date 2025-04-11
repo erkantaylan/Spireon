@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Source\Startup\Startup.csproj", "{C689B0B9-5F66-42A1-985F-FE0B7EC432C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spireon.Aspire", "Source\Spireon.Aspire\Spireon.Aspire.csproj", "{C689B0B9-5F66-42A1-985F-FE0B7EC432C1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Source\Core\Core.csproj", "{CD969943-E93D-4ABF-8C04-8A3175AB0EAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source.ApiService", "Source\Source.ApiService\Source.ApiService.csproj", "{3FB26CFF-9690-412D-9E64-4D886839B359}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.ApiService", "Source\Demo.ApiService\Demo.ApiService.csproj", "{3FB26CFF-9690-412D-9E64-4D886839B359}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source.Web", "Source\Source.Web\Source.Web.csproj", "{891E58CF-EEF7-4EC2-9699-85E84431B289}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Web", "Source\Demo.Web\Demo.Web.csproj", "{891E58CF-EEF7-4EC2-9699-85E84431B289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Source.Tests", "Source\Source.Tests\Source.Tests.csproj", "{2758CC7D-F5CA-4253-A6AE-9789ACEEC393}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spireon.Tests", "Source\Spireon.Tests\Spireon.Tests.csproj", "{2758CC7D-F5CA-4253-A6AE-9789ACEEC393}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{50FA03EB-9816-4E71-A21C-9501FA959120}"
 	ProjectSection(SolutionItems) = preProject

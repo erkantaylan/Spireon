@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
+        <RootNamespace>Source.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Startup\Startup.csproj"/>
+        <ProjectReference Include="..\Spireon.Aspire\Spireon.Aspire.csproj" />
     </ItemGroup>
 
     <ItemGroup>

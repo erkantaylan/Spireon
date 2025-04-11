@@ -7,7 +7,7 @@ namespace Core.Framework;
 
 public static class MicroAppExtensions
 {
-    public static void RegisterApiDefaults(this MicroApp webApp)
+    public static void RegisterApiDefaults(this SpireonApp webApp)
     {
         webApp.RegisterDefaultConfiguration();
         webApp.RegisterControllers();
@@ -17,7 +17,7 @@ public static class MicroAppExtensions
         webApp.RegisterBuilder(builder => builder.Services.AddProblemDetails());
     }
 
-    public static void RegisterOpenApi(this MicroApp webApp)
+    public static void RegisterOpenApi(this SpireonApp webApp)
     {
         webApp.Register(
             builder => { builder.Services.AddOpenApi(); },
@@ -33,19 +33,19 @@ public static class MicroAppExtensions
             });
     }
 
-    public static void RegisterControllers(this MicroApp webApp)
+    public static void RegisterControllers(this SpireonApp webApp)
     {
         webApp.Register(
             builder => { builder.Services.AddControllers(); },
             app => { app.MapControllers(); });
     }
 
-    public static void RegisterDefaultConfiguration(this MicroApp webApp)
+    public static void RegisterDefaultConfiguration(this SpireonApp webApp)
     {
         webApp.RegisterBuilder(builder => { builder.Services.AddSingleton<IConfiguration>(builder.Configuration); });
     }
 
-    public static void RegisterOtlp(this MicroApp webApp)
+    public static void RegisterOtlp(this SpireonApp webApp)
     {
         webApp.Register(
             builder => { builder.AddServiceDefaults(); },

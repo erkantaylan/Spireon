@@ -6,7 +6,7 @@ namespace Core.Framework;
 
 public static class Extensions
 {
-    public static void RegisterTransient(this MicroApp webApp, Assembly assembly)
+    public static void RegisterTransient(this SpireonApp webApp, Assembly assembly)
     {
         List<Type> types = assembly.GetTypes()
                                    .Where(o => o.GetCustomAttributes<MercuryAutoRegisteredAttribute>().Any())
