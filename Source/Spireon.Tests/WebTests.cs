@@ -1,6 +1,6 @@
 using System.Net;
 using Aspire.Hosting;
-using Startup;
+using Spireon.Aspire;
 
 namespace Source.Tests;
 

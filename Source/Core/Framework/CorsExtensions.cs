@@ -5,9 +5,9 @@ namespace Core.Framework;
 
 public static class CorsExtensions
 {
-    public static void RegisterCors(this MicroApp microApp)
+    public static void RegisterCors(this SpireonApp spireonApp)
     {
-        microApp.Register(
+        spireonApp.Register(
             builder =>
             {
                 builder.Services.AddCors(

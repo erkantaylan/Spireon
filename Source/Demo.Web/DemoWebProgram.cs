@@ -1,14 +1,14 @@
 using System.Reflection;
 using Core.Framework;
-using Source.Web.Components;
+using Demo.Web.Components;
 
-namespace Source.Web;
+namespace Demo.Web;
 
 internal static class DemoWebProgram
 {
     public static void Main(string[] args)
     {
-        var micro = new MicroApp(args);
+        var micro = new SpireonApp(args);
 
         micro.RegisterApiDefaults();
         micro.RegisterCors();

@@ -1,7 +1,7 @@
 using System.Reflection;
 using Core.Framework;
 
-namespace Source.ApiService;
+namespace Demo.ApiService;
 
 internal static class DemoApiProgram
 {
@@ -9,7 +9,7 @@ internal static class DemoApiProgram
 
     public static void Main(string[] args)
     {
-        var micro = new MicroApp(args);
+        var micro = new SpireonApp(args);
 
         micro.RegisterApiDefaults();
         micro.RegisterCors();

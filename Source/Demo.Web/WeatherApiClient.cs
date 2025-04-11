@@ -1,4 +1,4 @@
-namespace Source.Web;
+namespace Demo.Web;
 
 public class WeatherApiClient(HttpClient httpClient)
 {

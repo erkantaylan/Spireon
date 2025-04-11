@@ -1,6 +1,6 @@
 using Projects;
 
-namespace Startup;
+namespace Spireon.Aspire;
 
 public class AspireStartup
 {
@@ -17,9 +17,9 @@ public class AspireStartup
     {
         IResourceBuilder<RedisResource> cache = builder.AddRedis("demo-cache");
 
-        IResourceBuilder<ProjectResource> apiService = builder.AddProject<Source_ApiService>("demo-api");
+        IResourceBuilder<ProjectResource> apiService = builder.AddProject<Demo_ApiService>("demo-api");
 
-        builder.AddProject<Source_Web>("demo-web")
+        builder.AddProject<Demo_Web>("demo-web")
                .WithExternalHttpEndpoints()
                .WithReference(cache)
                .WithReference(apiService);
