@@ -23,11 +23,6 @@
         <PackageReference Include="OpenTelemetry.Instrumentation.Process"/>
         <PackageReference Include="OpenTelemetry.Instrumentation.Runtime"/>
         <PackageReference Include="Scalar.AspNetCore" />
-        <PackageReference Include="Swashbuckle.AspNetCore"/>
-        <PackageReference Include="Swashbuckle.AspNetCore.Filters" />
-        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen"/>
-        <PackageReference Include="prometheus-net.AspNetCore"/>
-        <PackageReference Include="prometheus-net.AspNetCore.HealthChecks"/>
     </ItemGroup>
 
 </Project>
