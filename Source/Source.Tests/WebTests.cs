@@ -1,4 +1,5 @@
 using System.Net;
+using Aspire.Hosting;
 
 namespace Source.Tests;
 

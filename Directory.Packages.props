@@ -3,52 +3,56 @@
         <TargetFramework>net8.0</TargetFramework>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
-        <AspnetVersion>8.0.10</AspnetVersion>
+        <AspnetVersion>9.4.0</AspnetVersion>
         <LangVersion>default</LangVersion>
         <MicrosoftExtensionsVersion>8.2.0</MicrosoftExtensionsVersion>
-        <EfVersion>8.0.10</EfVersion>
+        <EfVersion>9.0.4</EfVersion>
         <RuntimeVersion>8.0.2</RuntimeVersion>
-        <AspireVersion>8.2.1</AspireVersion>
+        <AspireVersion>9.2.0</AspireVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageVersion Include="Aspire.Hosting.Testing" Version="8.2.0" />
-        <PackageVersion Include="Blazored.SessionStorage" Version="2.4.0" />
-        <PackageVersion Include="Bogus" Version="35.4.0" />
-        <PackageVersion Include="Brushtail.FontAwesome.Blazor" Version="1.0.19" />
-        <PackageVersion Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.6.0" />
-        <PackageVersion Include="FluentResults" Version="3.16.0" />
-        <PackageVersion Include="FluentResults.Extensions.AspNetCore" Version="0.1.0" />
-        <PackageVersion Include="JetBrains.Annotations" Version="2024.2.0" />
-        <PackageVersion Include="MMLib.SwaggerForOcelot" Version="8.1.0" />
-        <PackageVersion Include="MediatR" Version="12.4.0" />
-        <PackageVersion Include="MediatR.Contracts" Version="2.0.1" />
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.8" />
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.8" />
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" />
-        <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.5" />
-        <PackageVersion Include="Microsoft.Extensions.Http" Version="8.0.0" />
-        <PackageVersion Include="MySqlConnector" Version="2.3.5" />
-        <PackageVersion Include="Polly" Version="8.2.0" />
-        <PackageVersion Include="Serilog" Version="3.1.1" />
-        <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1" />
-        <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-        <PackageVersion Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2" />
-        <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.6.2" />
-        <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
-        <PackageVersion Include="Testcontainers.PostgreSql" Version="3.9.0" />
-        <PackageVersion Include="Treyt.Yarp.ReverseProxy.Swagger" Version="3.8.0" />
-        <PackageVersion Include="Yarp.ReverseProxy" Version="2.1.0" />
-        <PackageVersion Include="prometheus-net.AspNetCore" Version="8.2.1" />
-        <PackageVersion Include="prometheus-net.AspNetCore.HealthChecks" Version="8.2.1" />
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(AspireVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="$(AspireVersion)"/>
+
+        <PackageVersion Include="Aspire.StackExchange.Redis.OutputCaching" Version="$(AspireVersion)"/>
+        <PackageVersion Include="Aspire.Hosting.Redis" Version="$(AspireVersion)"/>
+        <PackageVersion Include="Aspire.Hosting.Testing" Version="$(AspireVersion)"/>
+        <PackageVersion Include="Blazored.SessionStorage" Version="2.4.0"/>
+        <PackageVersion Include="Bogus" Version="35.4.0"/>
+        <PackageVersion Include="Brushtail.FontAwesome.Blazor" Version="1.0.19"/>
+        <PackageVersion Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.6.0"/>
+        <PackageVersion Include="FluentResults" Version="3.16.0"/>
+        <PackageVersion Include="FluentResults.Extensions.AspNetCore" Version="0.1.0"/>
+        <PackageVersion Include="JetBrains.Annotations" Version="2024.2.0"/>
+        <PackageVersion Include="MMLib.SwaggerForOcelot" Version="8.1.0"/>
+        <PackageVersion Include="MediatR" Version="12.4.0"/>
+        <PackageVersion Include="MediatR.Contracts" Version="2.0.1"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Authorization" Version="8.0.8"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="8.0.8"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8"/>
+        <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="8.0.5"/>
+        <PackageVersion Include="Microsoft.Extensions.Http" Version="9.0.4"/>
+        <PackageVersion Include="MySqlConnector" Version="2.3.5"/>
+        <PackageVersion Include="Polly" Version="8.2.0"/>
+        <PackageVersion Include="Serilog" Version="3.1.1"/>
+        <PackageVersion Include="Serilog.AspNetCore" Version="8.0.1"/>
+        <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
+        <PackageVersion Include="Swashbuckle.AspNetCore.Filters" Version="8.0.2"/>
+        <PackageVersion Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.6.2"/>
+        <PackageVersion Include="Testcontainers.PostgreSql" Version="3.9.0"/>
+        <PackageVersion Include="Treyt.Yarp.ReverseProxy.Swagger" Version="3.8.0"/>
+        <PackageVersion Include="Yarp.ReverseProxy" Version="2.1.0"/>
+        <PackageVersion Include="prometheus-net.AspNetCore" Version="8.2.1"/>
+        <PackageVersion Include="prometheus-net.AspNetCore.HealthChecks" Version="8.2.1"/>
         <!-- Version together with Entity Framework -->
-        <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(EfVersion)" />
-        <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="$(EfVersion)" />
-        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(EfVersion)" />
-        <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EfVersion)" />
-        <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EfVersion)" />
-        <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="$(EfVersion)" />
+        <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(EfVersion)"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="$(EfVersion)"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Design" Version="$(EfVersion)"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(EfVersion)"/>
+        <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="$(EfVersion)"/>
+        <PackageVersion Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="$(EfVersion)"/>
         <!-- Version together with Aspire -->
         <PackageVersion Include="Aspire.Hosting.AppHost" Version="$(AspireVersion)"/>
         <PackageVersion Include="Aspire.Hosting.MySql" Version="$(AspireVersion)"/>
@@ -59,8 +63,7 @@
         <PackageVersion Include="Aspire.Pomelo.EntityFrameworkCore.MySql" Version="$(AspireVersion)"/>
         <PackageVersion Include="Aspire.RabbitMQ.Client" Version="$(AspireVersion)"/>
         <PackageVersion Include="Aspire.StackExchange.Redis" Version="$(AspireVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(AspireVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="$(AspireVersion)"/>
+
         <!-- Open Telemetry -->
         <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.8.1"/>
         <PackageVersion Include="OpenTelemetry.Exporter.Prometheus.AspNetCore" Version="1.8.0-rc.1"/>
@@ -71,18 +74,22 @@
         <PackageVersion Include="OpenTelemetry.Instrumentation.Http" Version="1.8.1"/>
         <PackageVersion Include="OpenTelemetry.Instrumentation.Process" Version="0.5.0-beta.5"/>
         <PackageVersion Include="OpenTelemetry.Instrumentation.Runtime" Version="1.8.0"/>
+
         <!-- Version together with ASP.NET -->
-        <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(AspnetVersion)"/>
+        <!--        <PackageVersion Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4"/>-->
+
         <PackageVersion Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.Identity.UI" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspnetVersion)"/>
-        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="8.0.15"/>
         <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="$(AspnetVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="8.8.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Identity.Stores" Version="$(AspnetVersion)"/>
+        
+        <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0"/>
         <!-- Unit Tests  -->
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0"/>
         <PackageVersion Include="NSubstitute" Version="5.1.0"/>
