@@ -1,6 +1,7 @@
 using System.Reflection;
 using Core.Framework;
 using Demo.Web.Components;
+using Microsoft.FluentUI.AspNetCore.Components;
 
 namespace Demo.Web;
 
@@ -23,6 +24,7 @@ internal static class DemoWebProgram
                        .AddRazorComponents()
                        .AddInteractiveServerComponents();
                 builder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new Uri("http://demo-api"));
+                builder.Services.AddFluentUIComponents();
             },
             app =>
             {
