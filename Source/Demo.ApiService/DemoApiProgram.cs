@@ -17,7 +17,7 @@ internal static class DemoApiProgram
 
         micro.Register(
             builder => { },
-            app =>
+            (app, _) =>
             {
                 app.MapGet(
                     "/weatherforecast",

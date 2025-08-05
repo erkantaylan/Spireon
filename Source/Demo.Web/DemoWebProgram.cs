@@ -24,7 +24,7 @@ internal static class DemoWebProgram
                        .AddInteractiveServerComponents();
                 builder.Services.AddHttpClient<WeatherApiClient>(client => client.BaseAddress = new Uri("http://demo-api"));
             },
-            app =>
+            (app, _) =>
             {
                 app.UseStaticFiles();
                 app.UseAntiforgery();

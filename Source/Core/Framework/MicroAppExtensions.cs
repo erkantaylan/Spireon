@@ -21,7 +21,7 @@ public static class MicroAppExtensions
     {
         webApp.Register(
             builder => { builder.Services.AddOpenApi(); },
-            app =>
+            (app, _) =>
             {
                 app.MapOpenApi();
                 app.MapScalarApiReference(
@@ -37,7 +37,7 @@ public static class MicroAppExtensions
     {
         webApp.Register(
             builder => { builder.Services.AddControllers(); },
-            app => { app.MapControllers(); });
+            (app, _) => { app.MapControllers(); });
     }
 
     public static void RegisterDefaultConfiguration(this SpireonApp webApp)
@@ -49,6 +49,6 @@ public static class MicroAppExtensions
     {
         webApp.Register(
             builder => { builder.AddServiceDefaults(); },
-            app => { app.MapDefaultEndpoints(); });
+            (app, _) => { app.MapDefaultEndpoints(); });
     }
 }
