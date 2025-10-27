@@ -1,5 +1,6 @@
-using Demo.BlazorDemo.Client.Pages;
+using Core.Framework;
 using Demo.BlazorDemo.Components;
+using _Imports = Demo.BlazorDemo.Client._Imports;
 
 namespace Demo.BlazorDemo;
 
@@ -7,38 +8,46 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        var micro = new SpireonApp(args);
 
-        // Add services to the container.
-        builder.Services
-               .AddRazorComponents()
-               .AddInteractiveServerComponents()
-               .AddInteractiveWebAssemblyComponents();
+        micro.RegisterControllers();
+        micro.RegisterOpenApi();
+        micro.RegisterCors();
+        micro.RegisterDefaultConfiguration();
 
-        var app = builder.Build();
+        micro.Register(
+            builder =>
+            {
+                builder.Services
+                       .AddRazorComponents()
+                       .AddInteractiveServerComponents()
+                       .AddInteractiveWebAssemblyComponents();
+            },
+            (app, _) =>
+            {
+                if (app.Environment.IsDevelopment())
+                {
+                    app.UseWebAssemblyDebugging();
+                }
+                else
+                {
+                    app.UseExceptionHandler("/Error");
+                    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                    app.UseHsts();
+                }
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
-        {
-            app.UseWebAssemblyDebugging();
-        }
-        else
-        {
-            app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
-        }
+                app.UseHttpsRedirection();
 
-        app.UseHttpsRedirection();
+                app.UseAntiforgery();
 
-        app.UseAntiforgery();
+                app.MapStaticAssets();
+                app.MapRazorComponents<App>()
+                   .AddInteractiveServerRenderMode()
+                   .AddInteractiveWebAssemblyRenderMode()
+                   .AddAdditionalAssemblies(typeof(_Imports).Assembly);
+            });
 
-        app.MapStaticAssets();
-        app.MapRazorComponents<App>()
-           .AddInteractiveServerRenderMode()
-           .AddInteractiveWebAssemblyRenderMode()
-           .AddAdditionalAssemblies(typeof(Client._Imports).Assembly);
 
-        app.Run();
+        micro.Run();
     }
 }
