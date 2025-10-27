@@ -1,0 +1,46 @@
+﻿@inject NavigationManager NavigationManager
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href="/"/>
+    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]"/>
+    <link rel="stylesheet" href="@Assets["app.css"]"/>
+    <link rel="stylesheet" href="@Assets["Demo.BlazorDemo.styles.css"]"/>
+    <ImportMap/>
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    <HeadOutlet @rendermode="@PageRenderMode"/>
+    <title>Hello, World</title>
+</head>
+
+<body>
+<Routes @rendermode="@PageRenderMode"/>
+<script src="_framework/blazor.web.js"></script>
+</body>
+
+</html>
+
+@code
+{
+    [CascadingParameter]
+    private HttpContext HttpContext { get; set; } = default!;
+    private IComponentRenderMode? PageRenderMode { get; set; }
+    private static readonly IComponentRenderMode ServerNoPrerender = new InteractiveServerRenderMode(prerender: false);
+    private static IComponentRenderMode ServerWithPrerender = new InteractiveServerRenderMode(prerender: true);
+
+    protected override void OnParametersSet()
+    {
+        if (!HttpContext.AcceptsInteractiveRouting())
+        {
+            PageRenderMode = null;
+        }
+        else
+        {
+            PageRenderMode = ServerNoPrerender;
+            // PageRenderMode = ServerWithPrerender;
+        }
+    }
+}
