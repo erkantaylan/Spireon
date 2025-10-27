@@ -7,7 +7,7 @@ namespace Core.Database;
 
 public interface IRepository
     <TEntity, in TKey>
-    where TEntity : IEntity<TKey>
+    where TEntity : IHaveId<TKey>
     where TKey : IComparable, IEquatable<TKey>
 {
     IQueryable<TEntity> Search(
@@ -38,7 +38,7 @@ public interface IRepository
 
 public abstract class Repository<TEntity, TKey, TContext> : IRepository<TEntity, TKey>
     where TKey : IComparable, IEquatable<TKey>
-    where TEntity : class, IEntity<TKey>
+    where TEntity : class, IHaveId<TKey>
     where TContext : DbContext
 {
     protected readonly TContext Context;
@@ -103,7 +103,6 @@ public abstract class Repository<TEntity, TKey, TContext> : IRepository<TEntity,
 
     public virtual async Task InsertAsync(TEntity entity, bool save = true)
     {
-        entity.CreatedAt = DateTimeOffset.UtcNow;
         EntityEntry<TEntity> entry = DbSet.Entry(entity);
         entry.State = EntityState.Added;
 

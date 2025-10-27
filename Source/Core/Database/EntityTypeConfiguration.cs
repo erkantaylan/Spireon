@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Core.Database;
 
 public abstract class EntityTypeConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
-    where TEntity : class, IEntity
+    where TEntity : class, IHaveDates
 {
     public virtual void Configure(EntityTypeBuilder<TEntity> builder)
     {
