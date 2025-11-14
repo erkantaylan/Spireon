@@ -4,7 +4,7 @@ namespace Core.Framework;
 
 public class SpireonApp(string[] args)
 {
-    private readonly List<Action<WebApplication>> appActions = [];
+    private readonly List<Action<WebApplication, WebApplicationBuilder>> appActions = [];
     private readonly List<Action<WebApplicationBuilder>> webActions = [];
     private readonly WebApplicationBuilder webApplicationBuilder = WebApplication.CreateBuilder(args);
 
@@ -15,14 +15,14 @@ public class SpireonApp(string[] args)
         return this;
     }
 
-    public SpireonApp RegisterApp(Action<WebApplication> appAction)
+    public SpireonApp RegisterApp(Action<WebApplication, WebApplicationBuilder> appAction)
     {
         appActions.Add(appAction);
 
         return this;
     }
 
-    public SpireonApp Register(Action<WebApplicationBuilder> builder, Action<WebApplication> app)
+    public SpireonApp Register(Action<WebApplicationBuilder> builder, Action<WebApplication, WebApplicationBuilder> app)
     {
         RegisterBuilder(builder);
         RegisterApp(app);
@@ -39,9 +39,9 @@ public class SpireonApp(string[] args)
 
         WebApplication app = webApplicationBuilder.Build();
 
-        foreach (Action<WebApplication> action in appActions)
+        foreach (Action<WebApplication, WebApplicationBuilder> action in appActions)
         {
-            action.Invoke(app);
+            action.Invoke(app, webApplicationBuilder);
         }
 
         app.Run();

@@ -7,7 +7,6 @@
         <LangVersion>default</LangVersion>
         <MicrosoftExtensionsVersion>10.0.0</MicrosoftExtensionsVersion>
         <EfVersion>10.0.0</EfVersion>
-<!--        <RuntimeVersion>8.0.2</RuntimeVersion>-->
         <AspireVersion>13.0.0</AspireVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
@@ -26,6 +25,7 @@
         <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="$(AspnetVersion)"/>
 
         <PackageVersion Include="Polly" Version="8.6.4"/>
         <PackageVersion Include="Scalar.AspNetCore" Version="2.10.3"/>

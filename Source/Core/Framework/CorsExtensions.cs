@@ -23,6 +23,6 @@ public static class CorsExtensions
                             });
                     });
             },
-            app => { app.UseCors("AllowAllPolicy"); });
+            (app, _) => { app.UseCors("AllowAllPolicy"); });
     }
 }

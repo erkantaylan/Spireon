@@ -15,13 +15,7 @@ public class AspireStartup
 
     private static void AddDemos(IDistributedApplicationBuilder builder)
     {
-        IResourceBuilder<RedisResource> cache = builder.AddRedis("demo-cache");
-
-        IResourceBuilder<ProjectResource> apiService = builder.AddProject<Demo_ApiService>("demo-api");
-
-        builder.AddProject<Demo_Web>("demo-web")
-               .WithExternalHttpEndpoints()
-               .WithReference(cache)
-               .WithReference(apiService);
+        builder.AddProject<Demo_BlazorDemo>("demo-blazor")
+               .WithExternalHttpEndpoints();
     }
 }
