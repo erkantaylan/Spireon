@@ -1,40 +1,38 @@
 <Project>
     <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
-        <AspnetVersion>9.0.6</AspnetVersion>
+        <AspnetVersion>10.0.0</AspnetVersion>
         <LangVersion>default</LangVersion>
-        <MicrosoftExtensionsVersion>8.2.0</MicrosoftExtensionsVersion>
-        <EfVersion>9.0.6</EfVersion>
-        <RuntimeVersion>8.0.2</RuntimeVersion>
-        <AspireVersion>9.3.1</AspireVersion>
+        <MicrosoftExtensionsVersion>10.0.0</MicrosoftExtensionsVersion>
+        <EfVersion>10.0.0</EfVersion>
+<!--        <RuntimeVersion>8.0.2</RuntimeVersion>-->
+        <AspireVersion>13.0.0</AspireVersion>
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="JetBrains.Annotations"/>
     </ItemGroup>
     <ItemGroup>
-        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.12.0"/>
-        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.12.0"/>
-        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.12.0S"/>
-        <PackageVersion Include="Blazored.SessionStorage" Version="2.4.0"/>
-        <PackageVersion Include="Bogus" Version="35.6.2"/>
-        <PackageVersion Include="JetBrains.Annotations" Version="2024.3.0"/>
-        <PackageVersion Include="MediatR" Version="12.5.0"/>
-        <PackageVersion Include="MediatR.Contracts" Version="2.0.1"/>
-        <PackageVersion Include="Microsoft.AspNetCore.Components.Authorization" Version="9.0.4"/>
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.4"/>
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="9.0.4"/>
-        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.4"/>
-        <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="9.0.2"/>
+        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components" Version="4.13.1"/>
+        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components.Emoji" Version="4.13.1"/>
+        <PackageVersion Include="Microsoft.FluentUI.AspNetCore.Components.Icons" Version="4.13.1"/>
+        <PackageVersion Include="JetBrains.Annotations" Version="2025.2.2"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.Authorization" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.Authentication" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(AspnetVersion)"/>
+        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="$(AspnetVersion)"/>
 
-        <PackageVersion Include="Polly" Version="8.5.2"/>
-        <PackageVersion Include="Scalar.AspNetCore" Version="2.4.22"/>
-        <PackageVersion Include="Serilog" Version="4.2.0"/>
+        <PackageVersion Include="Polly" Version="8.6.4"/>
+        <PackageVersion Include="Scalar.AspNetCore" Version="2.10.3"/>
+        <PackageVersion Include="Serilog" Version="4.3.0"/>
         <PackageVersion Include="Serilog.AspNetCore" Version="9.0.0"/>
-        <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0"/>
-        <PackageVersion Include="Testcontainers.PostgreSql" Version="4.3.0"/>
+        <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0"/>
+        <PackageVersion Include="Testcontainers.PostgreSql" Version="4.8.1"/>
         <!-- Version together with Entity Framework -->
         <PackageVersion Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="$(EfVersion)"/>
         <PackageVersion Include="Microsoft.EntityFrameworkCore" Version="$(EfVersion)"/>
@@ -54,8 +52,7 @@
         <PackageVersion Include="Aspire.Pomelo.EntityFrameworkCore.MySql" Version="$(AspireVersion)"/>
         <PackageVersion Include="Aspire.RabbitMQ.Client" Version="$(AspireVersion)"/>
         <PackageVersion Include="Aspire.StackExchange.Redis" Version="$(AspireVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery" Version="$(AspireVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="$(AspireVersion)"/>
+        
         <PackageVersion Include="Aspire.StackExchange.Redis.OutputCaching" Version="$(AspireVersion)"/>
         <!-- Open Telemetry -->
         <PackageVersion Include="OpenTelemetry.Exporter.OpenTelemetryProtocol" Version="1.12.0"/>
@@ -77,7 +74,7 @@
         <PackageVersion Include="Microsoft.AspNetCore.Mvc.Testing" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.AspNetCore.TestHost" Version="$(AspnetVersion)"/>
-        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="9.6.0"/>
+        <PackageVersion Include="Microsoft.Extensions.Http.Resilience" Version="$(AspnetVersion)"/>
         <PackageVersion Include="Microsoft.Extensions.Identity.Stores" Version="$(AspnetVersion)"/>
         <!-- Unit Tests  -->
         <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.13.0"/>
